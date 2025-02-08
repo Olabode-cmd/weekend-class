@@ -1,0 +1,57 @@
+.card {
+  margin: 10px;
+  width: 340px;
+  padding: 15px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.title {
+  font-size: 22px;
+  font-weight: 700;
+}
+.subtitle {
+  font-size: 16px;
+  color: #444;
+  margin-top: 5px;
+}
+
+.description {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 25px
+}
+
+.image-div {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.image-div img {
+  height: 100%;
+  width: 100%;
+  transition: .4s;
+}
+
+.image-div:hover img {
+  transform: scale(1.05);
+}
+
+.product h3 {
+  font-size: 16px;
+  color: #777;
+  font-weight: 600;
+}
+
+.price-div p {
+  font-size: 14px;
+}
+.price-div p .price {
+  font-weight: bold;
+}
