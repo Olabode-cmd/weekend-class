@@ -6,17 +6,16 @@ import Product2 from '../assets/product2.jpg';
 import Product3 from '../assets/product3.jpg';
 import Product4 from '../assets/product4.jpg';
 
+import Text from "../components/text";
 const About = () => {
     // USESTATE
     const [name, setName] = useState('Michael');
-    const [phoneNumber, setPhoneNumber] = useState('99038289298');
-
-    console.log(name);
+    // const [phoneNumber, setPhoneNumber] = useState('99038289298');
 
     const changeName = () => {
-        setName('John');
-        console.log(name)
-    }
+      setName("John");
+    };
+    console.log(name);
 
     // MAPPING
     const products = [
@@ -42,27 +41,42 @@ const About = () => {
         }
     ];
 
+    const words = ['Faith', 'Dictionary', 'Product', 'School', 'Power'];
     
     return (
-        <div>
-            <h1>About</h1>
-            <p>This is the about page</p>
+      <div>
+        <h1>About</h1>
+        <div className="grid">
+          {/* <Text title="Product" />
+          <Text title="Item" />
+          <Text title="Star" />
+          <Text title="Puzzle" />
+          <Text title="Corn" />
+          <Text title="Golden Morn" />
+          <Text title="Mathematics" /> */}
 
-            <h3>{name}</h3>
+          {words.map((word) => (
+            <Text title={word} />
+          ))}
+        </div>
 
-            <button onClick={changeName}>Change name</button>
+        <button onClick={changeName}>Change name</button>
 
-            <div className="grid">
-                {products.map((product) => (
+        <div className="grid">
+          {products.map((product) => (
                     <ProductCard 
                         title={product.title} 
                         price={product.price} 
                         image={product.image} 
                     />
                 ))}
-            </div>
+
+          {/* <ProductCard title="Product 1" price="100" image={Product1} />
+          <ProductCard title="Product 2" price="200" image={Product2} />
+          <ProductCard title="Product 3" price="300" image={Product3} /> */}
         </div>
-    )
+      </div>
+    );
 }
 
 export default About;

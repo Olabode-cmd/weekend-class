@@ -1,7 +1,7 @@
 const ProductCard = (props) => {
     return (
       <>
-        <div className='product'>
+        <div className="product">
           <div className="image-div">
             <img src={props.image} alt="product" className="image" />
           </div>
@@ -9,7 +9,7 @@ const ProductCard = (props) => {
 
           <div className="price-div">
             <p>
-              From <span className="price">${props.price}</span>{" "}
+              From <span className="price">${props.price}</span>
             </p>
           </div>
         </div>
