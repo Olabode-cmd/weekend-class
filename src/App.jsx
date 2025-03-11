@@ -9,8 +9,8 @@ const App = () => {
   }
 
   let name = 'Olabode';
-  console.log('My name is ' + name); // concatenation
-  console.log(`My name is ${name}`) // string literals
+  console.log('My name is ' + name);
+  console.log(`My name is ${name}`) 
 
   // Conditionals - If Statements
   const checkAge = () => {

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .card {
   margin: 10px;
   width: 340px;
@@ -18,12 +20,6 @@
 .description {
   font-size: 16px;
   margin-top: 10px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 25px
 }
 
 .image-div {
@@ -55,3 +51,9 @@
 .price-div p .price {
   font-weight: bold;
 }
+
+/* git add . */
+/* git commit -m "checkpoint" */
+/* git pull origin main */
+
+/* accept incoming changes */

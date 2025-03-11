@@ -4,6 +4,7 @@ import ProductCard from "../components/productcard";
 // useRef
 // useContext
 
+// API Endpoint
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -12,24 +13,26 @@ const Products = () => {
 
     const fetchProducts = async () => {
         try {
-            const res = await fetch("https://dummyjson.com/products");
-            const data = await res.json();
+            const response = await fetch('https://dummyjson.com/products');
+            const data = await response.json();
 
-            setProducts(data.products);
+            setProducts(data.products)
         } catch (error) {
-            setError(error);
-            console.error(error);
+            setError(error)
+            console.error(error)
         } finally {
-            setLoading(false);
+            setLoading(false)
         }
     }
 
+    console.log(products)
+
     useEffect(() => {
         fetchProducts();
-    }, []); // dependency array
+    }, []); 
 
     if (loading) {
-        return <p>Products Loading...</p>;
+        return <p>Products are Loading...</p>;
     }
 
     if (error) {
@@ -41,7 +44,7 @@ const Products = () => {
             <h1>Products</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
 
-            <div className="grid">
+            <div className="grid grid-cols-3">
                 {products.map((product) => (
                     <ProductCard 
                         title={product.title} 
