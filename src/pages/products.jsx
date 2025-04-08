@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../components/productcard";
+import Navbar from '../components/navbar'
 
 // useRef
 // useContext
@@ -16,6 +17,7 @@ const Products = () => {
             const response = await fetch('https://dummyjson.com/products');
             const data = await response.json();
 
+            // console.log(data)
             setProducts(data.products)
         } catch (error) {
             setError(error)
@@ -31,9 +33,9 @@ const Products = () => {
         fetchProducts();
     }, []); 
 
-    if (loading) {
-        return <p>Products are Loading...</p>;
-    }
+    // if (loading) {
+    //     return <p>Products are Loading...</p>;
+    // }
 
     if (error) {
         return <p>Error: {error.message}</p>;
@@ -41,18 +43,21 @@ const Products = () => {
 
     return (
         <div>
+            <Navbar />
             <h1>Products</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
 
-            <div className="grid grid-cols-3">
+            {loading ? <h1 className='text-4xl text-center mt-10'>Loading...</h1> : (
+                <div className="grid grid-cols-3">
                 {products.map((product) => (
-                    <ProductCard 
-                        title={product.title} 
-                        price={product.price} 
-                        image={product.thumbnail} 
+                    <ProductCard
+                        title={product.title}
+                        price={product.price}
+                        image={product.thumbnail}
                     />
                 ))}
             </div>
+            )}
         </div>
     )
 }

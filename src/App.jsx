@@ -83,6 +83,7 @@ const App = () => {
 
   return (
     <>
+      <Navbar />
 
       <button onClick={() => alert('I have been clicked!!!')}>Click Me!</button>
       <button onClick={click}>Click Me Again!</button>
